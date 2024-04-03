@@ -1,0 +1,48 @@
+@use '../tools/global'as *;
+
+
+#open-menu {
+  z-index: 11;
+  position: fixed;
+  background-color: #FFF;
+  color: #000;
+  top: 0;
+  right: -120%;
+  width: 100%;
+  height: 100vh;
+  transition: all 0.3s;
+  /*ナビの高さ*/
+
+  &.panelactive {
+    right: 0;
+  }
+
+  .menu__feature{
+    @include fz(18);
+    line-height: 1;
+    font-style: italic;
+    margin: 0 0 100px;
+  }
+
+  .menu-inner {
+    height: 100%;
+    padding: 0; 
+    padding: 22px 40px; 
+
+    .menu-links {
+      .link{
+        @include fz(18);
+        line-height: 1;
+        font-style: italic;
+        display: block;
+        margin: 0 0 20px;
+        font-family: $FONTFAMILY_EN;
+
+      }
+
+
+    }
+  }
+
+
+}

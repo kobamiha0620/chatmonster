@@ -1,0 +1,72 @@
+//--------------------------------------------------------
+// width
+//--------------------------------------------------------
+
+$MAX_WIDTH: 1280px;
+$MAX_CONTENT_WIDTH_PC: 980px;
+$MAX_CONTENT_WIDTH_SP: 320px;
+$MAX_NARROW_CONTENT_WIDTH_PC: 810px;
+$MAX_NARROW_CONTENT_WIDTH_SP: 320px;
+$BREAK_POINT: 768px;
+
+//--------------------------------------------------------------------------
+// colors
+//--------------------------------------------------------------------------
+
+// common colors
+$PALETTE_PURE_BLACK: #DDD;
+$PALETTE_PURE_WHITE: #fff;
+$PALETTE_OFF_WHITE: #fcfafa;
+$PALETTE_LIGHT_GLAY: #eeecec;
+$PALETTE_MEDIUM_GLAY: #707070;
+$PALETTE_DARK_GLAY: #343434;
+$PALETTE_DIRTY_RED: #95565c;
+$bc_grey: #DDD;
+//ex color
+$PALETTE_LIGHT_PURPLE: #f0eef3;
+$PALETTE_DIRTY_PURPLE: #320050;
+
+// utility colors
+$BASE_TEXT_COLOR: $PALETTE_DARK_GLAY;
+$BASE_BG_COLOR: $PALETTE_OFF_WHITE;
+$COMMON_SHADOW_COLOR: $PALETTE_LIGHT_GLAY;
+$COMMON_ACCENT_COLOR: $PALETTE_DIRTY_RED;
+
+//--------------------------------------------------------
+// font
+//--------------------------------------------------------
+
+//font-weight
+$BOLD: 700;
+$SEMIBOLD: 600;
+$MEDIUM: 500;
+$REGULAR: 400;
+
+//font-size
+$FONTSIZE_PC_TITLE: 20px;
+$FONTSIZE_PC_TEXT: 15px;
+$FONTSIZE_SP_TITLE: 18px;
+$FONTSIZE_SP_TEXT: 14px;
+
+//font-family
+$FONTFAMILY_EN: adobe-garamond-pro, 'Noto Sans JP', "ヒラギノ角ゴシック", "Hiragino Sans",
+  YuGothic, "Yu Gothic", sans-serif;
+$FONTFAMILY_EN_EX: adobe-garamond-pro, 'Noto Sans JP', "ヒラギノ角ゴ ProN W3",
+  "ヒラギノ角ゴシック", "Hiragino Sans", YuGothic, "Yu Gothic", sans-serif;
+
+$FONTFAMILY_JA: 'Noto Sans JP', "ヒラギノ角ゴシック", "Hiragino Sans", YuGothic, "Yu Gothic",
+  sans-serif; //暫定
+
+$fontfamily_spc: presicav, sans-serif;
+
+
+@mixin bg(){
+  background-size: 100% auto;
+  white-space: nowrap;
+  text-indent: -9999px;
+  background-repeat: no-repeat;
+  display: block;
+}
+@mixin fz($size) {
+font-size: calc($size / 16) + rem;
+}

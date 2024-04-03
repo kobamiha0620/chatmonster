@@ -1,0 +1,573 @@
+@use '../tools/global'as *;
+
+
+#g-header {
+  color: #000;
+  font-family: $FONTFAMILY_EN;
+  font-size: $FONTSIZE_PC_TITLE;
+  line-height: 1;
+
+  .site-title {
+    transform: rotate(90deg) translateX(0);
+    transform-origin: top left;
+    left: 52px;
+    top: 0; //rotate reset
+    position: fixed;
+    @include fz(72);
+    font-style: italic;
+    line-height: 0.9;
+    &__small{
+      display: inline-block;
+      transform: rotate(90deg) translateX(0);
+      transform-origin: top left;
+      left: 69px;
+      top: 7.7em; //rotate reset
+      position: fixed;
+      @include fz(72);
+      font-style: italic;
+      line-height: 0.9;
+  
+    }
+
+    @include media-screen-sp() {
+      @include fz(24);
+      left: 18px;
+      top: 18px;
+      &__small{
+        @include fz(24);
+        left: 23px;
+        top: 8.5em; //rotate reset
+  
+      }
+    }
+  }
+
+  .feature__ttl{
+    background: url("./dist/images/icon/feature_yoru_black.svg") no-repeat 0 0;
+    white-space: nowrap;
+    text-indent: -9999px;
+    width: 50px;
+    height: 723px;
+    background-size: 100% auto;
+    left: -1px;
+    top: 8px;
+    position: fixed;
+    @include media-screen-sp() {
+      width: 18px;
+      height: 261px;
+      background-size: 100% auto;
+      left: -1px;
+    }
+
+  }
+
+  #header-menu {
+    white-space: nowrap;
+    text-indent: -9999px;
+
+    .header__btn {
+      display: none;
+    }
+
+
+    @include media-screen-sp() {
+      .header__btn {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+
+        &--areap {
+          transition: all .4s;
+        }
+
+        span {
+          display: inline-block;
+          transition: all .4s;
+
+          /*アニメーションの設定*/
+          position: absolute;
+          left: 0;
+          height: 2px;
+          background: #000;
+          width: 100%;
+
+          &:nth-of-type(1) {
+            top: 9px;
+          }
+
+          &:nth-of-type(2) {
+            top: 20px;
+          }
+
+        }
+
+
+      }
+
+      &.active {
+        .header__btn--area {
+          transform: rotateY(-360deg);
+        }
+
+        .header__btn {
+
+          span {
+            background: #000;
+
+            &:nth-of-type(1) {
+              top: 15px;
+              left: 0;
+              transform: translateY(0px) rotate(-135deg);
+              width: 100%;
+            }
+
+            &:nth-of-type(2) {
+              top: 15px;
+              left: 0;
+              transform: translateY(0px) rotate(135deg);
+              width: 100%;
+            }
+          }
+        }
+
+      }
+
+      display: block;
+      position: fixed;
+
+      padding: 0;
+      cursor: pointer;
+      z-index: 12;
+      top: 18px;
+      right: 1px;
+    }
+  }
+
+  #header-menu-pc {
+    display: block;
+    padding: 0;
+
+    .menu-links {
+      .link {
+        @include fz(18);
+        line-height: 1;
+        display: block;
+        font-family: presicav, sans-serif;
+        font-weight: 300;
+        transition: 0.5s;
+
+        &:hover {
+          color: #888;
+          transition: 0.5s;
+        }
+      }
+
+
+    }
+
+
+    @include media-screen-sp() {
+      display: none;
+
+    }
+  }
+
+  .header-snslink {
+    position: fixed;
+    z-index: 10;
+    right: 18px;
+    top: 1px;
+    width: 30px;
+    transform-origin: 0 0;
+    transform: none;
+
+
+    @include media-screen-sp() {
+      top: 290px;
+      right: auto;
+      left: 6px;
+
+    }
+
+
+    .linkitem {
+      padding: 0;
+      margin: 0 0 27px;
+
+
+      a.instagram {
+        background: url("./dist/images/icon/yoru-icon_instagram.gif") no-repeat 0 0;
+
+        width: 30px;
+        height: 30px;
+        white-space: nowrap;
+        text-indent: -9999px;
+        display: block;
+        background-size: 100% auto;
+      }
+
+      a.x {
+        background: url("./dist/images/icon/yoru-icon_X.gif") no-repeat 0 0;
+        width: 30px;
+        height: 30px;
+        white-space: nowrap;
+        text-indent: -9999px;
+        display: block;
+        background-size: 100% auto;
+      }
+
+      a.reel {
+        background: url("./dist/images/icon/yoru-icon_reel.gif") no-repeat 0 0;
+        width: 30px;
+        height: 30px;
+        white-space: nowrap;
+        text-indent: -9999px;
+        display: block;
+        background-size: 100% auto;
+      }
+      @include media-screen-sp() {
+        margin: 0 0 18px;
+
+      }
+
+    }
+  }
+}
+
+
+.page-template-page-about {
+  #g-header {
+    color: $PALETTE_DIRTY_PURPLE;
+  }
+}
+
+#g-header.-menu-open {
+  color: $PALETTE_PURE_BLACK;
+}
+
+
+
+.header {
+  &__feature {
+    @include fz(24);
+    line-height: 1;
+    font-style: italic;
+    white-space: nowrap;
+
+    @include media-screen-sp() {
+      display: none;
+    }
+
+  }
+
+  &__logo {
+    background: url("./dist/images/icon/main-logo-black.png") no-repeat 0 0;
+    background-size: 100% auto;
+
+    width: 240px;
+    height: 96px;
+    margin-top: 60px;
+    white-space: nowrap;
+    text-indent: -9999px;
+    display: block;
+    transition: 0.5s;
+
+    &:hover {
+      background: url("./dist/images/icon/main-logo-grey02.png") no-repeat 0 0;
+      transition: 0.5s;
+      background-size: 100% auto;
+    }
+
+    @include media-screen-tb() {
+      width: 192px;
+      height: 77px;
+
+    }
+
+    @include media-screen-sp() {
+      width: 136px;
+      height: 55px;
+      margin: 7.3vw auto 0;
+
+      &:hover {
+        background: url("./dist/images/icon/main-logo-grey02.png") no-repeat 0 0;
+        transition: 0.6s;
+        background-size: 100% auto;
+      }
+    }
+  }
+
+  &__pcmenu {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1632px;
+    width: 100%;
+    margin: 0 auto 80px;
+
+    @include media-screen-sp() {
+      max-width: 100%;
+      display: block;
+      margin: 0 0 7.6vw;
+    }
+  }
+
+  &__fixed {
+    padding: 0 144px;
+
+    @include media-screen-sp() {
+      padding: 0;
+    }
+  }
+}
+
+.navigation {
+
+  width: 100%;
+  &__wrapper{
+  }
+  &__ttl {
+    @include fz(34);
+    font-style: italic;
+    margin: 0 36px 0 0;
+  }
+
+  &__lists {
+    font-style: italic;
+    @include fz(22);
+    overflow: hidden;
+
+    li {
+      float: left;
+      padding-left: 6px;
+
+      &::before {
+        content: "/";
+        padding-right: 2px;
+        display: inline-block;
+
+      }
+
+      &:first-child {
+        padding-left: 0;
+
+        &::before {
+          content: "";
+          padding-right: 0;
+        }
+      }
+
+      a {
+        transition: 0.3s;
+
+        &:hover {
+          transition: 0.3s;
+          text-decoration: line-through solid 1px;
+          -webkit-text-decoration: line-through solid 1px;
+          -webkit-text-decoration-line: line-through;
+          -webkit-text-decoration-thickness: 1px;
+
+        }
+      }
+
+    }
+  }
+
+  @include media-screen-sp() {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+
+    padding: 0 10px 0 12vw;
+    &__wrapper{
+
+    }
+    &__ttl {
+      @include fz(22);
+      margin: 0 0 6px;
+    }
+
+    &__lists {
+      @include fz(15);
+
+    }
+  }
+
+}
+
+//headerメニュー
+  .navigation__lists {
+    .dashed{
+      a {
+        text-decoration: line-through solid 1px;
+        -webkit-text-decoration: line-through solid 1px;
+        -webkit-text-decoration-line: line-through;
+        -webkit-text-decoration-thickness: 1px;
+
+      }
+    }
+
+  }
+
+
+
+
+body.home {
+  .navigation__lists {
+    .home {
+      a {
+        text-decoration: line-through solid 1px;
+        -webkit-text-decoration: line-through solid 1px;
+        -webkit-text-decoration-line: line-through;
+        -webkit-text-decoration-thickness: 1px;
+
+      }
+    }
+  }
+
+  .navigation {
+
+    &__lists {
+
+
+      li {
+
+
+
+        a {
+
+          &:hover {
+
+
+          }
+        }
+
+      }
+    }
+
+
+
+  }
+}
+
+
+body.reabout,
+body.member,
+body.reel {
+  .header {
+    &__logo {
+      background: url("./dist/images/icon/main-logo-white.png") no-repeat 0 0;
+      background-size: 100% auto;
+      width: 192px;
+      height: 77px;
+
+      &:hover {
+        background-size: 100% auto !important;
+        background: url("./dist/images/icon/main-logo-grey02.png") no-repeat 0 0;
+      }
+
+      @include media-screen-sp() {
+        &:hover {
+          background-size: 100% auto;
+
+          background: url("./dist/images/icon/main-logo-grey02.png") no-repeat 0 0;
+
+        }
+      }
+    }
+  }
+}
+
+
+body.reabout,
+body.member,
+body.reel {
+  #g-header {
+
+    .linkitem{
+      a.instagram {
+        background: url("./dist/images/icon/yoru-icon_instagram_white.gif") no-repeat 0 0;
+        width: 30px;
+        height: 30px;
+        background-size: 100% auto;
+      }
+      a.x {
+        background: url("./dist/images/icon/yoru-icon_X_white.gif") no-repeat 0 0;
+        width: 30px;
+        height: 30px;
+        background-size: 100% auto;
+      }
+      a.reel {
+        background: url("./dist/images/icon/yoru-icon_reel_white.gif") no-repeat 0 0;
+        width: 30px;
+        height: 30px;
+        background-size: 100% auto;
+      }
+    }
+
+    #header-menu-pc {
+
+      .menu-links {
+        .link {
+            color: #FFF;
+          &:hover {
+            color: #888;
+          }
+        }
+
+
+      }
+
+
+      @include media-screen-sp() {
+        display: none;
+
+      }
+    }
+
+    #header-menu {
+
+      .header__btn {
+        display: none;
+
+      }
+
+      @include media-screen-sp() {
+        .header__btn {
+          display: block;
+
+          span {
+            background: #FFF;
+
+          }
+        }
+
+        &.active {
+
+
+          .header__btn {
+
+            span {
+              background: #000;
+            }
+          }
+
+
+        }
+
+
+      }
+
+    }
+
+    .feature__ttl{
+      background: url("./dist/images/icon/feature_yoru_white.svg") no-repeat 0 0;
+
+
+    }
+  }
+
+
+
+}

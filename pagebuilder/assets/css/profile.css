@@ -1,0 +1,25 @@
+.pb_profile-container { background-position: center center; background-size: cover; }
+.pb_profile-layout-type1 { position: relative; }
+.pb_profile_overlay { position: absolute; top: 0; bottom: 0; left: 0; right: 0; z-index: 1; }
+.pb_profile_bg_image img { display: block; height: auto; width: 100%; }
+.pb_profile-layout-type1 .pb_profile-contents { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; -ms-grid-row-align: center; -webkit-align-items: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; position: absolute; top: 0; bottom: 0; left: 0; right: 0; z-index: 2; }
+.pb_profile-layout-type1 .pb_profile-contents-inner { max-height: 100%; padding: 0 50px; }
+.pb_profile_image { text-align: center; margin-bottom: 30px; }
+.pb_profile_image img { height: auto; max-width: 100%; }
+.pb_profile_logo { text-align: center; margin-bottom: 18px; }
+.pb_profile_headline { font-size: 36px; line-height: 1.6; margin: 0 0 10px !important; text-align: center; padding: 0 !important; }
+.pb_profile_sns { list-style: none; margin: 0 !important; text-align: center; }
+.pb_profile-layout-type2 .pb_profile_image { border-radius: 50%; height: 300px; margin-left: auto; margin-right: auto; overflow: hidden; position: relative; width: 300px; }
+.pb_profile-layout-type2 .pb_profile_image img { display: block; height: 100%; width: 100%; object-fit: cover; }
+.pb_profile-contents > :last-child { margin-bottom: 0 !important; }
+
+@media only screen and (max-width: 767px) {
+	.pb_profile-layout-type1 .pb_profile-contents-inner { padding: 0 22px; }
+	.pb_profile_logo { margin-bottom: 10px; }
+	.pb_profile_headline { font-size: 20px; margin-bottom: 2px !important; }
+	.pb_profile-layout-type2 .pb_profile_image { height: 200px; width: 200px; }
+}
+@media only screen and (max-width: 480px) {
+	.pb_profile-layout-type1 .pb_profile_bg_image { position: relative; padding-top: 83.33%; }
+	.pb_profile-layout-type1 .pb_profile_bg_image img { height: 100%; width: 100%; object-fit: cover; position: absolute; top: 0; left: 0; }
+}
