@@ -1,0 +1,26 @@
+/* !
+Theme Name: miharuIrisawa_v1
+
+*/
+
+@use 'compornent/compocommon';
+// @use 'pages/header';
+@use 'pages/footer';
+// @use 'pages/single';
+
+@use 'pages/home';
+@use 'pages/single';
+@use 'pages/works';
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&display=swap');
+
+body{
+    font-family: "Montserrat","Noto Sans JP", sans-serif!important;
+
+}
+
+
+.p-logo, .p-page-header__title, .p-entry-works__title, .p-modal-cta__catch, .p-header-content__catch, .p-header-content__desc, .p-cb__item-headline, .p-index-about__image-label {
+    font-family: "Montserrat","Noto Sans JP", sans-serif!important;
+
+}

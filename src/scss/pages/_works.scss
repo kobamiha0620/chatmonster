@@ -1,77 +1,62 @@
 @use '../tools/global' as *;
 
-.worklist-section {
-  // 1366, 1200
-  margin: get-percent-size(1200, 26) 0 0;
-  padding: 0 0 get-percent-size(1200, 110);
-  // width: 100%;
-  .worklist-title {
-    color: $PALETTE_PURE_WHITE;
-    font-family: $FONTFAMILY_EN;
-    font-size: 23px;
-    font-weight: $SEMIBOLD;
+// company
+.companyinfo{
+  max-width: 1180px;
+  width: 88.8888%;
+  margin:  0 auto;
+  &__table{
+    border-spacing:0;
+    border: none;
+    tr{
+      border-bottom: 1px solid #ccc;
+    }
+    td{
+      border: none;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
   }
-  .worklists {
-    margin: get-percent-size(1200, 24) auto 0;
-    .work-postitem {
-      position: relative;
-      margin: 0 0 16px;
-      overflow: hidden;
-      // min-height: 150px;
-      img {
-        width: 100%;
+  &__ttl{
+    font-weight: bold;
+    min-width: 200px;
+    font-size: 18px;
+
+  }
+  &__txt{
+    font-size: 16px;
+
+  }
+  .p-cb__item-button__wrapper{
+    margin: 34px auto 60px;
+    a{
+      background-color: #000;
+
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    &__table{
+
+      tr{
       }
-
-      @media screen and (max-width: 350px) {
-        width: 100%;
+      td{
+        padding-top: 10px;
+        padding-bottom: 10px;
       }
+    }
+    &__ttl{
+      min-width: auto;
+      font-size: 16px;
+      white-space: nowrap;
+    }
+    &__txt{
+      font-size: 14px;
+  
+    }
+    .p-cb__item-button__wrapper{
+      margin: 34px auto 60px;
 
-      .postitem-text {
-        position: absolute;
-        transform: translateY(100%);
-        transform-origin: left bottom;
-        color: #fff;
-        top: 0;
-        opacity: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba($PALETTE_PURE_BLACK, 0.8);
-        display: flex;
-        flex-flow: column;
-        justify-content: center;
-        align-items: center;
-        font-weight: $SEMIBOLD;
-        font-family: $FONTFAMILY_JA;
-        line-height: 1.5;
-        cursor: pointer;
-        transition: all 0.2s ease-out;
-        backdrop-filter: blur(3px);
-        padding: 20px;
-
-        @include media-screen-sp() {
-          font-size: 13px;
-        }
-
-        &_name {
-          margin-top: auto;
-          text-align: center;
-          @include font-style-jp;
-          transform-origin: center;
-        }
-        &_title {
-          text-align: center;
-          @include font-style-jp;
-          transform-origin: center;
-        }
-
-        &_category {
-          margin: auto 0 15px;
-          font-weight: $REGULAR;
-          font-family: $FONTFAMILY_EN;
-        }
-      }
     }
   }
 }
-
-

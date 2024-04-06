@@ -1,115 +1,127 @@
-@use "../tools/global" as *;
+@use "../tools/global"as *;
 
-body{
-  background-color: $bc_grey;
-}
-body.reabout, body.member, body.reel{
-  background-color: #000;
-}
-main {
-  margin: 0 auto;
-}
-.wrap {
-  width: get-percent-size(1366, 1200);
-  width: 100%;
-  padding-left: calc( 144px - 1%);
-  // max-width: 1200px;
-  margin: 0;
-  // min-height: 100vh;
+// #cbe3ae
+// #7cbf57
 
-  @include media-screen-sp() {
-    // width: get-percent-size(750, 686);
-    padding-left: calc( 12vw - 1.8vw);
-  }
-}
+// about
+.p-cb__item-desc p:last-child {
+  line-height: 1.6;
 
-/* =================================================================
-loading
-=================================================================*/
-
-.loading {
-  position: fixed;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  z-index: 1000;
-  background-color: $PALETTE_PURE_BLACK;
-}
-
-/* =================================================================
-mainvisual
-=================================================================*/
-
-.mainvisual {
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-  display: block;
-
-  @include media-screen-sp() {
-    height: 100vh; /* Fallback */
-    height: calc(var(--vh, 1vh) * 100);
-  }
-  .mainvisual-video-container {
-    video {
-      min-width: 100%;
-      position: absolute;
-      min-height: 100%;
+  @media only screen and (max-width: 768px) {
+    br {
+      display: none;
     }
   }
-  .mainvisual-title {
-    width: 421px;
-    position: absolute;
-    display: block;
-    z-index: 10;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+}
 
-    @include media-screen-sp() {
-      width: get-percent-size(750, 497);
-      height: auto;
+#cb_1{
+  .p-cb__item-desc2{
+    p{
+      line-height: 1.6;
     }
   }
-  .mainvisual-scroll {
-    position: absolute;
-    z-index: 10;
-    left: 50%;
-    bottom: 0px;
-    transform: translateX(-50%);
-    color: $PALETTE_PURE_WHITE;
+}
 
-    &_text {
-      font-family: $FONTFAMILY_EN;
-      font-size: 18px;
+.p-index-about__images {
+  .p-index-about__image {
+    width: 220px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    display: flex;
+
+    .p-index-about__image {
+      width: 30%;
     }
-    &_line {
-      width: 1px;
-      height: 40px;
-      background-color: rgba(255, 255, 255, 0.5);
-      margin: 7px auto 0;
-      position: relative;
-      overflow: hidden;
+  }
 
-      @keyframes scrollAnim {
-        0% {
-          top: -100%;
-        }
-        100% {
-          top: 200%;
-        }
-      }
-      &:before {
-        content: " ";
-        display: block;
-        width: 1px;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        background-color: rgba(255, 255, 255, 0.8);
-        animation: scrollAnim 2.5s ease-in-out infinite;
+
+}
+
+
+//フリースペース
+.btmabout{
+  margin-top: -80px;
+  li{
+    line-height: 1.6;
+    font-size: 14px;
+  }
+  @media only screen and (max-width: 991px) {
+    margin-top: 0;
+  }
+
+}
+#cb_1{
+  padding-bottom: 20px;
+
+}
+
+.p-entry__body{
+  p{
+    &.topSubttl{
+
+      font-size: 42px;
+      text-align: center;
+      font-weight: 500;
+      line-height: 1.5;
+      margin: -4px auto 34px;
+      @media only screen and (max-width: 768px) {
+        font-size: 30px;
+        margin: -4px auto 18px;
+
       }
     }
   }
 }
+
+.wpcf7{
+  border: none;
+  background-color: #FFF;
+  form{
+    margin: 0;
+
+  }
+  .p-entry__body ul{
+    margin-left: 0;
+    margin: 0;
+  }
+  p.chatInquiery__list--ttl{
+    font-size: 18px;
+    margin: 0 0 8px;
+    font-weight: bold;
+    line-height: 1.5;
+  }
+  input{
+    border: none;
+    border-bottom: solid 1px #000;
+  }
+  textarea{
+    border: solid 1px #000;
+  }
+  select{
+    width: 100%;
+    border: none;
+    border-bottom: solid 1px #000;
+  }
+}
+
+.chatInquiery{
+  &__list{
+    margin: 0;
+
+    li{
+      list-style-type: none;
+      margin-bottom: 30px;
+    }
+    &--ttl{
+
+    }
+  }
+}
+
+
+//tablet
+@media only screen and (max-width: 991px) {}
+
+//SP
+@media only screen and (max-width: 768px) {}

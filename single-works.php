@@ -268,6 +268,8 @@ if ( have_posts() ) :
 			$previous_post = get_previous_post();
 			$next_post = get_next_post();
 ?>
+
+
 				<ul class="p-pager p-entry-works__pager">
 <?php
 			if ( $previous_post ) :
@@ -288,8 +290,17 @@ if ( have_posts() ) :
 <?php
 		endif;
 ?>
+			<!-- 追記 -->
+			<div class="p-cb__item-button__wrapper">
+		<a class="p-cb__item-button p-button" href="https://chatmonster.jp/#cb_6" style="background-color: #000;">お仕事の依頼はこちら</a>
+	</div>
+	<!-- 追記 -->
+
+
 			</div>
+
 		</div>
+		
 	</article>
 <?php
 	endwhile;

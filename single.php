@@ -58,7 +58,11 @@ if ( have_posts() ) :
 
 			if ( $catlist_float ) :
 ?>
-				<div class="p-float-category"><?php echo implode( '', $catlist_float ); ?></div>
+	
+<?php if(!in_category('pricemenu')) : ?>
+	<div class="p-float-category"><?php echo implode( '', $catlist_float ); ?></div>
+<?php endif; ?>
+
 <?php
 			endif;
 ?>
@@ -66,7 +70,11 @@ if ( have_posts() ) :
 <?php
 		elseif ( $catlist_float ) :
 ?>
-			<div class="p-entry__category"><?php echo implode( '', $catlist_float ); ?></div>
+			
+			
+			<?php if(!in_category('pricemenu')) : ?>
+				<div class="p-entry__category"><?php echo implode( '', $catlist_float ); ?></div>
+<?php endif; ?>
 <?php
 		endif;
 
@@ -174,15 +182,31 @@ if ( have_posts() ) :
 
 		if ( has_category() || has_tag() || $dp_options['show_comment'] ) :
 ?>
-				<ul class="p-entry__meta c-meta-box u-clearfix">
-					<?php if ( has_category() ) : ?><li class="c-meta-box__item c-meta-box__item--category"><?php the_category( ', ' ); ?></li><?php endif; ?>
-					<?php if ( has_tag() && get_the_tags() ) : ?><li class="c-meta-box__item c-meta-box__item--tag"><?php echo get_the_tag_list( '', ', ', '' ); ?></li><?php endif; ?>
-					<?php if ( $dp_options['show_comment'] ) : ?><li class="c-meta-box__item c-meta-box__item--comment"><?php _e( 'Comments', 'tcd-w' ); ?>: <a href="#comment_headline"><?php echo get_comments_number( '0', '1', '%' ); ?></a></li><?php endif; ?>
-				</ul>
+<?php if(!in_category('pricemenu')) : ?>
+
+<ul class="p-entry__meta c-meta-box u-clearfix">
+	<?php if ( has_category() ) : ?><li class="c-meta-box__item c-meta-box__item--category"><?php the_category( ', ' ); ?></li><?php endif; ?>
+	<?php if ( has_tag() && get_the_tags() ) : ?><li class="c-meta-box__item c-meta-box__item--tag"><?php echo get_the_tag_list( '', ', ', '' ); ?></li><?php endif; ?>
+	<?php if ( $dp_options['show_comment'] ) : ?><li class="c-meta-box__item c-meta-box__item--comment"><?php _e( 'Comments', 'tcd-w' ); ?>: <a href="#comment_headline"><?php echo get_comments_number( '0', '1', '%' ); ?></a></li><?php endif; ?>
+</ul>
+<?php endif; ?>
+
 <?php
 		endif;
 ?>
 			</div>
+
+
+<!-- 追記部分 --------------------------------------- -->
+<?php if(in_category('pricemenu')) : ?>
+	<div class="p-cb__item-button__wrapper">
+		<a class="p-cb__item-button p-button" href="#">Contact</a>
+	</div>
+<?php endif; ?>
+
+<!-- /追記部分 --------------------------------------- -->
+
+
 <?php
 		$previous_post = get_previous_post();
 		$next_post = get_next_post();

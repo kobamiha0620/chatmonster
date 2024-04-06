@@ -1,0 +1,10 @@
+@use '../tools/global'as *;
+
+.c-menu-button {
+  background-image: url('http://chatmonster.jp/wp-content/uploads/2024/04/menu.png');
+  background-size: cover;
+
+  &::before {
+    content: "";
+  }
+}

@@ -1,56 +1,12 @@
 @use '../tools/global' as *;
 
-footer {
-  padding-top: 144px;
-  .footer-inner {
-    text-align: center;
-    font-family: $FONTFAMILY_EN;
-    padding: 7px 0;
-    font-size: 14px;
-    color: #000;
-  }
-  @include media-screen-sp() {
-    padding-top: 20vw;
-
-  }
-}
-
-body.reabout, body.member, body.reel{
-  footer {
-    .footer-inner {
-      color: #FFF;
-
-    }
-  }
+.l-footer{
+  background: #f4f4f4;
 }
 
 
-.nav__bottom{
-  margin-left: 144px;
-  margin-right: 3%;
-  padding-top: 144px;
-  box-sizing: border-box;
-  color: #000;
-  @include fz(16);
-  font-family: $FONTFAMILY_EN;
-
-  .navigation{
-    justify-content: flex-end;
-    &__ttl{
-      display: none;
-    }
-    .yearly{
-      display: none;
-    }
-  }
-  @include media-screen-sp() {
-    margin-left: 12vw;
-    margin-right: 2%;
-    padding-top: 12vw;
-    .navigation{
-      margin: 0;
-    }
-  }
-
+@media only screen and (min-width: 992px) {
+.p-footer-info{
+  padding-bottom: 0;
 }
-
+}

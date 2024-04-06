@@ -945,3 +945,14 @@ function auto_play_movie() {
     return TRUE;
   }
 }
+
+
+//特定のCSSを追加　------------------2404
+add_action( 'wp_enqueue_scripts', function(){
+wp_enqueue_style(
+	'my-style',
+	get_template_directory_uri() . '/css/modstyle.css',
+	array(),
+	filemtime( get_template_directory() . '/css/modstyle.css' )
+	);
+} );
